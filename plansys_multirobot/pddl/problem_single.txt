@@ -16,19 +16,34 @@ set instance storage_zone_2 zone
 set instance storage_zone_3 zone
 set instance storage_zone_4 zone
 set instance start_zone_1 zone
+
 set predicate (at robot1 start_zone_1)
+
 set predicate (at palet1 pallet_zone_1)
 set predicate (at palet2 pallet_zone_2)
 set predicate (at palet3 pallet_zone_3)
 set predicate (at palet4 pallet_zone_4)
 set predicate (at palet5 pallet_zone_5)
 set predicate (at palet6 pallet_zone_6)
+
 set predicate (free robot1)
-set predicate (has-palet pallet_zone_1)
-set predicate (has-palet pallet_zone_2)
-set predicate (has-palet pallet_zone_3)
-set predicate (has-palet pallet_zone_4)
-set predicate (has-palet pallet_zone_5)
-set predicate (has-palet pallet_zone_6)
-set predicate (has-robot start_zone_1)
-set goal (and (at palet1 storage_zone_1))
+set predicate (unloaded robot1)
+
+set predicate (no-palet start_zone_1)
+set predicate (no-palet storage_zone_1)
+set predicate (no-palet storage_zone_2)
+set predicate (no-palet storage_zone_3)
+set predicate (no-palet storage_zone_4)
+
+set predicate (no-robot storage_zone_1)
+set predicate (no-robot storage_zone_2)
+set predicate (no-robot storage_zone_3)
+set predicate (no-robot storage_zone_4)
+set predicate (no-robot pallet_zone_1)
+set predicate (no-robot pallet_zone_2)
+set predicate (no-robot pallet_zone_3)
+set predicate (no-robot pallet_zone_4)
+set predicate (no-robot pallet_zone_5)
+set predicate (no-robot pallet_zone_6)
+
+set goal (and (at palet1 storage_zone_1)(at palet2 storage_zone_2) (at palet3 storage_zone_3)(at palet4 storage_zone_4)) 

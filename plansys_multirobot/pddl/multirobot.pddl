@@ -1,6 +1,6 @@
 (define (domain amazonwarehouse)
 
-(:requirements :strips :typing :adl :fluents :durative-actions)
+(:requirements :strips :typing :durative-actions)
 
 (:types  
 zone
@@ -10,10 +10,10 @@ palet robot - physical_object
 (:predicates
 (free ?x - robot)
 (at ?x - physical_object ?zone - zone)
-(has-palet ?x - zone)
-(has-robot ?x - zone)
-(loaded ?x - robot)
-(holding ?x -robot ?y - palet)
+(no-palet ?x - zone)
+(no-robot ?x - zone)
+(unloaded ?x - robot)
+(holding ?robot - robot ?palet - palet)
 )
 
 
@@ -25,9 +25,9 @@ palet robot - physical_object
     :duration ( = ?duration 5)
     :condition (and 
         (at start (at ?robot ?zone1))
-        (at start (not (has-robot ?zone2)))
+        (at start (no-robot ?zone2))
         (at start (free ?robot))
-        (over all (not (loaded ?robot)))
+        (at start (unloaded ?robot))
     )
 
     :effect (and 
@@ -35,8 +35,8 @@ palet robot - physical_object
         (at end (at ?robot ?zone2))
         (at start (not (free ?robot)))
         (at end (free ?robot))
-        (at start (not (has-robot ?zone1)))
-        (at end (has-robot ?zone2))
+        (at start (no-robot ?zone1))
+        (at end (not (no-robot ?zone2)))
     )
 )
 
@@ -49,12 +49,11 @@ palet robot - physical_object
     :duration ( = ?duration 5)
     :condition (and 
         (at start (at ?robot ?zone1))
-        (at start (not (has-robot ?zone2)))
+        (at start (no-robot ?zone2))
         (at start (free ?robot))
-        (over all (holding ?robot ?palet))
+        (at start (holding ?robot ?palet))
         (at start (at ?palet ?zone1))
-        (at start (not (has-palet ?zone2)))
-        (over all (loaded ?robot))
+        (at start (no-palet ?zone2))
     )
     :effect (and 
         (at start (not (at ?robot ?zone1)))
@@ -63,10 +62,10 @@ palet robot - physical_object
         (at end (at ?palet ?zone2))
         (at start (not (free ?robot)))
         (at end (free ?robot))
-        (at start (not (has-palet ?zone1)))
-        (at end (has-palet ?zone2))
-        (at start (not (has-robot ?zone1)))
-        (at end (has-robot ?zone2))
+        (at start (no-palet ?zone1))
+        (at end (not (no-palet ?zone2)))
+        (at start (no-robot ?zone1))
+        (at end (not (no-robot ?zone2)))
     )
 )
 
@@ -79,13 +78,11 @@ palet robot - physical_object
     :precondition (and 
         (at ?robot ?zone)
         (at ?palet ?zone)
-        (not (loaded ?robot))
-        (not (holding ?robot ?palet))
         (free ?robot)
     )
     :effect(and 
         (holding ?robot ?palet)
-        (loaded ?robot)
+        (not (unloaded ?robot))
     )
 )
 
@@ -98,13 +95,11 @@ palet robot - physical_object
     :precondition(and 
         (at ?robot ?zone)
         (at ?palet ?zone)
-        (holding ?robot ?palet)
-        (loaded ?robot)
         (free ?robot)
     )
     :effect(and
         (not (holding ?robot ?palet))
-        (not (loaded ?robot))
+        (unloaded ?robot)
     )
 )
 )
