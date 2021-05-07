@@ -1,0 +1,43 @@
+move_1:
+  ros__parameters:
+    plugins:
+      - plansys2_move_bt_node
+    waypoints: ["pallet_zone_1", "pallet_zone_2", "pallet_zone_3", 
+                "pallet_zone_4", "pallet_zone_5", "pallet_zone_6",
+                "storage_zone_1", "storage_zone_2", "storage_zone_3",
+                "storage_zone_4", "start_zone_1", "start_zone_2"]
+    waypoint_coords:
+      pallet_zone_1: [3.64, 0.63, 0.01]
+      pallet_zone_2: [3.59, -1.11, 0.01]
+      pallet_zone_3: [3.51, -2.84, 0.01]
+      pallet_zone_4: [3.49, -4.68, 0.01]
+      pallet_zone_5: [3.64, -6.91, 0.01]
+      pallet_zone_6: [3.64, -8.88, 0.01]
+      storage_zone_1: [-5.84, -3.35, 0.01]
+      storage_zone_2: [-5.84, 1.12, 0.01]
+      storage_zone_3: [-5.84, -7.76, 0.01]
+      storage_zone_4: [-5.84, -7.76, 0.01]
+      start_zone_1: [0.0, -1.0, 0.01]
+      start_zone_2: [0.0, 4.00, 0.01]
+
+transport_1:
+  ros__parameters:
+    plugins:
+      - plansys2_move_bt_node
+    waypoints: ["pallet_zone_1", "pallet_zone_2", "pallet_zone_3", 
+                "pallet_zone_4", "pallet_zone_5", "pallet_zone_6",
+                "storage_zone_1", "storage_zone_2", "storage_zone_3",
+                "storage_zone_4", "start_zone_1", "start_zone_2"]
+    waypoint_coords:
+      pallet_zone_1: [3.64, 0.63, 0.01]
+      pallet_zone_2: [3.59, -1.11, 0.01]
+      pallet_zone_3: [3.51, -2.84, 0.01]
+      pallet_zone_4: [3.49, -4.68, 0.01]
+      pallet_zone_5: [3.64, -6.91, 0.01]
+      pallet_zone_6: [3.64, -8.88, 0.01]
+      storage_zone_1: [-5.84, -3.35, 0.01]
+      storage_zone_2: [-5.84, 1.12, 0.01]
+      storage_zone_3: [-5.84, -7.76, 0.01]
+      storage_zone_4: [-5.84, -7.76, 0.01]
+      start_zone_1: [0.0, -1.0, 0.01]
+      start_zone_2: [0.0, 4.00, 0.01]
