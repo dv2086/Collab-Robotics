@@ -46,4 +46,4 @@ set predicate (no-robot pallet_zone_4)
 set predicate (no-robot pallet_zone_5)
 set predicate (no-robot pallet_zone_6)
 
-set goal (and (at palet1 storage_zone_1)(at palet2 storage_zone_2) (at palet3 storage_zone_3)(at palet4 storage_zone_4)) 
+set goal (and (at palet1 storage_zone_1)(at palet2 storage_zone_2) (at palet3 storage_zone_3)(at palet4 storage_zone_4)(at robot1 start_zone_1)) 
