@@ -72,8 +72,8 @@ palet robot - physical_object
 (:action lift
     :parameters (
         ?robot - robot
-        ?zone - zone
         ?palet - palet
+        ?zone - zone
     )
     :precondition (and 
         (at ?robot ?zone)
@@ -89,8 +89,8 @@ palet robot - physical_object
 (:action drop
     :parameters (
         ?robot - robot
-        ?zone - zone
         ?palet - palet
+        ?zone - zone
     )
     :precondition(and 
         (at ?robot ?zone)

@@ -17,7 +17,7 @@
 #include <vector>
 #include <memory>
 
-#include "plansys_multirobot/Move.hpp"
+#include "plansys_multirobot/behavior_tree_nodes/Move.hpp"
 
 #include "geometry_msgs/msg/pose2_d.hpp"
 #include "tf2_geometry_msgs/tf2_geometry_msgs.h"
@@ -26,7 +26,7 @@
 
 #include "rclcpp_lifecycle/lifecycle_node.hpp"
 
-namespace plansys_multirobot
+namespace plansys2_bt_tests
 {
 
 Move::Move(
@@ -107,10 +107,10 @@ BT_REGISTER_NODES(factory)
   BT::NodeBuilder builder =
     [](const std::string & name, const BT::NodeConfiguration & config)
     {
-      return std::make_unique<plansys_multirobot::Move>(
+      return std::make_unique<plansys2_bt_tests::Move>(
         name, "robot1/navigate_to_pose", config);
     };
 
-  factory.registerBuilder<plansys_multirobot::Move>(
+  factory.registerBuilder<plansys2_bt_tests::Move>(
     "Move", builder);
 }

@@ -25,7 +25,7 @@
 #include "behaviortree_cpp_v3/behavior_tree.h"
 #include "behaviortree_cpp_v3/bt_factory.h"
 
-namespace plansys_multirobot
+namespace plansys2_bt_tests
 {
 
 class Move : public plansys2::BtActionNode<

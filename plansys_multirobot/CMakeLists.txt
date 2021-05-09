@@ -32,7 +32,7 @@ set(dependencies
 include_directories(include)
 
 
-add_library(plansys2_move_bt_node SHARED src/Move.cpp)
+add_library(plansys2_move_bt_node SHARED src/behavior_tree_nodes/Move.cpp)
 list(APPEND plugin_libs plansys2_move_bt_node)
 
 foreach(bt_plugin ${plugin_libs})
@@ -56,6 +56,13 @@ install(TARGETS
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION lib/${PROJECT_NAME}
 )
+
+if(BUILD_TESTING)
+  find_package(ament_lint_auto REQUIRED)
+  ament_lint_auto_find_test_dependencies()
+
+  find_package(ament_cmake_gtest REQUIRED)
+endif()
 
 ament_export_dependencies(${dependencies})
 
