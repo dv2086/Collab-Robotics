@@ -60,10 +60,12 @@ middlepoint = {
     'bottom_right_down': {'x_pose': -4.24, 'y_pose': -5.7, 'z_pose': 0.01, 'rotation': 3.14}
 }  
 ```
-![Route](plan_route.jpg)
+![Route](images/plan_route.jpg)
 >The added middle points are indicated by the red dots in the above image and the green line areas are the approximate moving areas of Robot 1 and Robot 2. Middle points were selected by choosing points close enough to some obstacles becasue we find that if robots can sense more surroundings, the robots' confidence area will be more concentrated, and it will adjust it's estimated location more accurately, leading to better pathing. From the image we can see that Robot2's moving area is mostly on the left side and Robot1's moving area is mostly on the right side, which will allow these two robots to deliver the pallets simultaneously without collision. 
 
 > Since the bots always think there are palets in the palet locations due to a constant model, they will not carry the palets directly downward. Since they must exit from the sides, we must be explicit that they take the outer palets first.
+
+> The bot confidence is indicated by the area of the dot matrix around it. A more concentrated blob means the bot is more confident in its estimation. In the image the confidence is very poor, as the bot starts far away from any known objects.
 #### Other Issues Faced
 
 
@@ -137,10 +139,10 @@ Steps involved
 > The planner comes up with the following solutions.
 - Single Robot
 
-![Single bot plan](singlebot.png)
+![Single bot plan](images/singlebot.png)
 - Multi Robot
 
-![Multi bot plan](multibot.png)
+![Multi bot plan](images/multibot.png)
 > We can see that the plans are very similar, and since the tasks are distributed between 2 bots in the multibot problem, the solution takes half the time.
 #### Problems Faced
 - The popf solver used by default is a bit behind on the pddl features that it supports. In the problem, we had to set an explicit goal of (at palet1 zone1)(at palet2 zone2), but an ideal goal would be (not(no-palet zone1))(not(no-palet zone2)), such that the planner could decide where to place the palets, as long as the storage locations are not left empty. Negative goals aren't supported by popf however. This combined with no negative conditions, lead to a verbose pddl which would be cleaner in new versions.
