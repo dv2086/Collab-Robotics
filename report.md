@@ -7,7 +7,7 @@ The planner initially defined in the exercise did not work as intended. The main
 - the robot sensors would get blocked when lifting palets, causing the robots to build inaccurate costmaps and get stuck.
 - robots that were not close to known objects in the world would not be able to improve confidence in their positioning. This lead to inaccurate estimation of the robot position in the world, especially for robot1.
 - the robots would not update the ground truth of the warehouse model that they start with. Even after moving palets, the robots expect the palet to be in their original location. This causes them to take unnecessary routes, but does not get them stuck.
-
+- when determining the costmap, the bot does not take into account the palet it is carrying. Since the palet is much larger than the bot, it may still bump into objects while being carried.
 We addressed these issues in a number of ways.
 
 #### Planner Idea
