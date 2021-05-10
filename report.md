@@ -36,28 +36,29 @@ We addressed these issues in a number of ways.
 middlepoint = {
     'preentrance_left': {'x_pose': 0.97, 'y_pose': 2.3, 'z_pose': 0.01, 'rotation': -1.5708},
     'entrance_left': {'x_pose': 3.58, 'y_pose': 2.3, 'z_pose': 0.01, 'rotation': 0},
-​
+
     'preentrance_right1': {'x_pose': 0.97, 'y_pose': -6.91, 'z_pose': 0.01, 'rotation': -1.5708},
     'preentrance_right2': {'x_pose': 0.97, 'y_pose': -9.88, 'z_pose': 0.01, 'rotation': -1.5708},
     'entrance_right': {'x_pose': 3.58, 'y_pose': -9.88, 'z_pose': 0.01, 'rotation': 0},
-​
+
     'exit1': {'x_pose': 0.97, 'y_pose': 0.49, 'z_pose': 0.01, 'rotation': 3.14},
     'exit2': {'x_pose': 0.97, 'y_pose': -1.56, 'z_pose': 0.01, 'rotation': 3.14},
-​
-    'exit5': {'x_pose': 0.97, 'y_pose': -6.91, 'z_pose': 0.01, 'rotation': 3.14},
-    'exit6': {'x_pose': 0.97, 'y_pose': -9.0, 'z_pose': 0.01, 'rotation': 3.14},
-    'middle_right_down': {'x_pose': 0.9, 'y_pose': -5.7, 'z_pose': 0.01, 'rotation': 3.14},
-    'middle_right_up': {'x_pose': 0.9, 'y_pose': -5.7, 'z_pose': 0.01, 'rotation': 0} ,
-​
+
+    'exit5': {'x_pose': 0.7, 'y_pose': -8.0, 'z_pose': 0.01, 'rotation': 1.57},
+    'exit6': {'x_pose': 0.7, 'y_pose': -9.5, 'z_pose': 0.01, 'rotation': 3.14},
+    'middle_right_down': {'x_pose': 0.7, 'y_pose': -5.7, 'z_pose': 0.01, 'rotation': 3.14},
+    'middle_right_up': {'x_pose': 0.7, 'y_pose': -5.7, 'z_pose': 0.01, 'rotation': 0} ,
+
     'middle_left_down': {'x_pose': 0.9, 'y_pose': 0.63, 'z_pose': 0.01, 'rotation': 3.14},
     'middle_left_up': {'x_pose': 0.9, 'y_pose': 0.63, 'z_pose': 0.01, 'rotation': 0},
-​
-    'storage_entrance0': {'x_pose': -4.24, 'y_pose': -8.0, 'z_pose': 0.01, 'rotation': 3.14},
+
+    'storage_entrance0': {'x_pose': -3.5, 'y_pose': -7.7, 'z_pose': 0.01, 'rotation': 3.14},
+    'storage_entrance1': {'x_pose': -3.5, 'y_pose': -3.35, 'z_pose': 0.01, 'rotation': 3.14},
     'storage_entrance2': {'x_pose': -4.24, 'y_pose': 1.12, 'z_pose': 0.01, 'rotation': 3.14},
     'storage_entrance3': {'x_pose': -4.24, 'y_pose': 6.12, 'z_pose': 0.01, 'rotation': 3.14},
-​
+
     'bottom_left_down': {'x_pose': -4.24, 'y_pose': 0.63, 'z_pose': 0.01, 'rotation': 3.14},
-    'bottom_right_down': {'x_pose': -4.24, 'y_pose': -5.7, 'z_pose': 0.01, 'rotation': 3.14}
+    'bottom_right_down': {'x_pose': -3.5, 'y_pose': -5.7, 'z_pose': 0.01, 'rotation': 3.14}
 }  
 ```
 ![Route](images/plan_route.jpg)
